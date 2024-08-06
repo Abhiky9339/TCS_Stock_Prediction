@@ -1,8 +1,6 @@
 # TCS_Stock_Prediction
 
-Certainly! Below is a `README.md` file that explains how to set up and run a stock prediction application using Ridge Regression, including all stages of Exploratory Data Analysis (EDA).
-
----
+# Domain : Stock Market
 
 # TCS Stock Prediction Using Ridge Regression
 
