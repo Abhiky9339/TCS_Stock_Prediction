@@ -42,13 +42,13 @@ if __name__ == '__main__':
 <body>
     <h1>Stock Price Predictor</h1>
     <form method="post">
-        <label for="high">Previous Day's High:</label>
+        <label for="high">Previous_Day_High:</label>
         <input type="text" id="high" name="high" required><br><br>
-        <label for="low">Previous Day's Low:</label>
+        <label for="low">Previous_Day_Low:</label>
         <input type="text" id="low" name="low" required><br><br>
-        <label for="open">Previous Day's Open:</label>
+        <label for="open">Previous_Day_Open:</label>
         <input type="text" id="open" name="open" required><br><br>
-        <label for="volume">Previous Day's Volume:</label>
+        <label for="volume">Previous_Day_Volume:</label>
         <input type="text" id="volume" name="volume" required><br><br>
         <input type="submit" value="Predict Close Price">
     </form>
