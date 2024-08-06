@@ -10,7 +10,7 @@ with open('TCS_stock_prediction.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -38,4 +38,4 @@ def home():
     return render_template('index.html', prediction=prediction)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=5000, debug=True)
