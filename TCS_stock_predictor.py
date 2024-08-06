@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template_string
 import pickle
 import numpy as np
 
@@ -24,14 +24,15 @@ def index():
             # Predict the close price
             predicted_close = model.predict(features)[0]
             
-            return render_template('index.html', predicted_close=predicted_close)
+            return render_template_string(template, predicted_close=predicted_close)
+        except ValueError:
+            return "Please enter valid numerical values."
         except Exception as e:
             return f"An error occurred: {e}"
     
-    return render_template('index.html')
+    return render_template_string(template)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+template = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,13 +43,13 @@ if __name__ == '__main__':
 <body>
     <h1>Stock Price Predictor</h1>
     <form method="post">
-        <label for="high">Previous_Day_High:</label>
+        <label for="high">Previous Day High:</label>
         <input type="text" id="high" name="high" required><br><br>
-        <label for="low">Previous_Day_Low:</label>
+        <label for="low">Previous Day Low:</label>
         <input type="text" id="low" name="low" required><br><br>
-        <label for="open">Previous_Day_Open:</label>
+        <label for="open">Previous Day Open:</label>
         <input type="text" id="open" name="open" required><br><br>
-        <label for="volume">Previous_Day_Volume:</label>
+        <label for="volume">Previous Day Volume:</label>
         <input type="text" id="volume" name="volume" required><br><br>
         <input type="submit" value="Predict Close Price">
     </form>
@@ -56,5 +57,3 @@ if __name__ == '__main__':
     {% if predicted_close is not none %}
     <h2>Predicted Close Price: {{ predicted_close }}</h2>
     {% endif %}
-</body>
-</html>
