@@ -15,7 +15,6 @@ This project demonstrates how to predict TCS (Tata Consultancy Services) stock p
 - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
 - [Model Training and Evaluation](#model-training-and-evaluation)
 - [Usage](#usage)
-- [License](#license)
 
 ## Project Overview
 
@@ -69,10 +68,3 @@ The dataset used in this project is assumed to be in a CSV file named `tcs_stock
 
 The script trains the Ridge Regression model on scaled features and evaluates its performance using MSE and R-squared metrics.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-This `README.md` provides an overview of the project, setup instructions, and details on how to run and evaluate the stock prediction model using Ridge Regression. Adjust the instructions as necessary based on your project structure and specific requirements.
